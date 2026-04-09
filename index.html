@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALMA Development Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Barlow+Condensed:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="menuClose">âœ•</button>
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#services" onclick="closeMobileMenu()">Services</a>
+    <a href="#process" onclick="closeMobileMenu()">Process</a>
+    <a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+    <a href="#contact" class="btn-primary"
+      style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:0.15em;margin-top:1rem;padding:0.8rem 2rem;">Book
+      a Call</a>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark">
+        <!-- Simplified globe SVG mark -->
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="36" stroke="rgba(240,237,232,0.5)" stroke-width="0.8" />
+          <ellipse cx="40" cy="40" rx="20" ry="36" stroke="rgba(240,237,232,0.35)" stroke-width="0.8" />
+          <ellipse cx="40" cy="40" rx="36" ry="14" stroke="rgba(240,237,232,0.35)" stroke-width="0.8" />
+          <line x1="4" y1="40" x2="76" y2="40" stroke="rgba(240,237,232,0.25)" stroke-width="0.8" />
+          <line x1="40" y1="4" x2="40" y2="76" stroke="rgba(240,237,232,0.25)" stroke-width="0.8" />
+          <!-- ALMA letterforms simplified -->
+          <path d="M26 52 L33 30 L40 52" stroke="rgba(232,97,26,0.9)" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <path d="M29 44 L37 44" stroke="rgba(232,97,26,0.9)" stroke-width="1.5" stroke-linecap="round" fill="none" />
+          <path d="M40 52 L47 30 L54 52" stroke="rgba(232,97,26,0.9)" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <path d="M43 44 L51 44" stroke="rgba(232,97,26,0.9)" stroke-width="1.5" stroke-linecap="round" fill="none" />
+        </svg>
+      </div>
+      <div class="nav-logo-text">
+        ALMA
+        <span class="nav-logo-sub">Development Studios</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="lang-toggle" onclick="toggleLang()" id="langBtn">ES</button>
+      <a href="#contact" class="btn-nav">Book a Call &rarr;</a>
+      <button class="hamburger" id="menuBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-noise"></div>
+
+    <!-- Background globe -->
+    <div class="hero-globe">
+      <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="300" cy="300" r="280" stroke="white" stroke-width="0.5" />
+        <ellipse cx="300" cy="300" rx="160" ry="280" stroke="white" stroke-width="0.5" />
+        <ellipse cx="300" cy="300" rx="280" ry="110" stroke="white" stroke-width="0.5" />
+        <ellipse cx="300" cy="300" rx="280" ry="55" stroke="white" stroke-width="0.3" />
+        <ellipse cx="300" cy="300" rx="280" ry="185" stroke="white" stroke-width="0.3" />
+        <ellipse cx="300" cy="300" rx="80" ry="280" stroke="white" stroke-width="0.3" />
+        <line x1="20" y1="300" x2="580" y2="300" stroke="white" stroke-width="0.3" />
+        <line x1="300" y1="20" x2="300" y2="580" stroke="white" stroke-width="0.3" />
+        <!-- Triangles for poly texture -->
+        <polygon points="300,20 160,160 300,180" stroke="white" stroke-width="0.3" fill="none" />
+        <polygon points="300,20 440,160 300,180" stroke="white" stroke-width="0.3" fill="none" />
+        <polygon points="20,300 160,160 180,300" stroke="white" stroke-width="0.3" fill="none" />
+        <polygon points="580,300 440,160 420,300" stroke="white" stroke-width="0.3" fill="none" />
+        <polygon points="20,300 160,440 180,300" stroke="white" stroke-width="0.3" fill="none" />
+        <polygon points="580,300 440,440 420,300" stroke="white" stroke-width="0.3" fill="none" />
+        <polygon points="300,580 160,440 300,420" stroke="white" stroke-width="0.3" fill="none" />
+        <polygon points="300,580 440,440 300,420" stroke="white" stroke-width="0.3" fill="none" />
+        <polygon points="160,160 300,180 180,300" stroke="white" stroke-width="0.3" fill="none" />
+        <polygon points="440,160 300,180 420,300" stroke="white" stroke-width="0.3" fill="none" />
+        <polygon points="160,440 300,420 180,300" stroke="white" stroke-width="0.3" fill="none" />
+        <polygon points="440,440 300,420 420,300" stroke="white" stroke-width="0.3" fill="none" />
+      </svg>
+    </div>
+
+    <!-- Right side services list (desktop) -->
+    <div class="hero-top">
+      <div class="hero-services-list">
+        <span class="hero-service-item" data-en="Web Design/" data-es="Diseño Web/">Web Design/</span>
+        <span class="hero-service-item" data-en="Development/" data-es="Desarrollo/">Development/</span>
+        <span class="hero-service-item" data-en="Strategy/" data-es="Estrategia/">Strategy/</span>
+        <span class="hero-service-item" data-en="Design Support/" data-es="Soporte Diseño/">Design Support/</span>
+      </div>
+    </div>
+
+    <!-- Section numbers -->
+    <div class="hero-nums">
+      <span class="hero-num">001/</span>
+      <span class="hero-num">002/</span>
+      <span class="hero-num">003/</span>
+      <span class="hero-num">004/</span>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-sub" data-en="We build digital worlds" data-es="Construimos mundos digitales">We build digital
+        worlds</p>
+      <h1 class="hero-title">
+        <span data-en="YOUR VISION<span class='slash'>/.</span>" data-es="TU VISIÓN<span class='slash'>/.</span>">YOUR
+          VISION<span class="slash">/.</span></span><br>
+        <span class="accent" data-en="OUR CRAFT<span class='slash'>//.</span>"
+          data-es="NUESTRO ARTE<span class='slash'>//.</span>">OUR CRAFT<span class="slash">//.</span></span>
+      </h1>
+      <p class="hero-tagline"
+        data-en="We design and develop digital experiences that drive real growth for ambitious startups and mid-sized companies."
+        data-es="Diseñamos y desarrollamos experiencias digitales que impulsan el crecimiento real de startups y empresas medianas ambiciosas.">
+        We design and develop digital experiences that drive real growth for ambitious startups and mid-sized companies.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary" data-en="Book a Call &rarr;" data-es="Agendar llamada &rarr;">Book a Call &rarr;</a>
+        <a href="https://wa.me/yourphone" class="btn-wa" target="_blank" data-en="WhatsApp Us"
+          data-es="Escríbenos por WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+          </svg>
+          WhatsApp Us
+        </a>
+        <a href="#portfolio" class="btn-secondary" data-en="View Our Work" data-es="Ver nuestro trabajo">View Our
+          Work</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span data-en="Scroll to explore" data-es="Desplaza para explorar">Scroll to explore</span>
+    </div>
+    <div class="hero-year">© 2025 / ALMA</div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar reveal">
+    <div class="stat-item">
+      <span class="stat-num" data-count="20">0<span>+</span></span>
+      <span class="stat-label" data-en="Projects Delivered" data-es="Proyectos EntregAños">Projects Delivered</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num" data-count="100"><span>100%</span></span>
+      <span class="stat-label" data-en="Client Satisfaction" data-es="SatisfacciÃ³n del Cliente">Client
+        Satisfaction</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num" data-count="3">0<span>+</span></span>
+      <span class="stat-label" data-en="Years of Experience" data-es="AÃ±os de Experiencia">Years of Experience</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">48<span>h</span></span>
+      <span class="stat-label" data-en="Average Response Time" data-es="Tiempo Promedio de Respuesta">Average Response
+        Time</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-visual reveal">
+      <div class="about-globe-wrap">
+        <div class="about-ring"></div>
+        <div class="about-ring-2"></div>
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" stroke="#E8611A" stroke-width="0.8" />
+          <ellipse cx="200" cy="200" rx="100" ry="180" stroke="#E8611A" stroke-width="0.8" />
+          <ellipse cx="200" cy="200" rx="180" ry="70" stroke="#E8611A" stroke-width="0.6" />
+          <ellipse cx="200" cy="200" rx="180" ry="120" stroke="#E8611A" stroke-width="0.4" />
+          <line x1="20" y1="200" x2="380" y2="200" stroke="#E8611A" stroke-width="0.5" />
+          <line x1="200" y1="20" x2="200" y2="380" stroke="#E8611A" stroke-width="0.5" />
+          <!-- Poly mesh -->
+          <polygon points="200,20 110,110 200,140" stroke="#C9952A" stroke-width="0.6" fill="none" />
+          <polygon points="200,20 290,110 200,140" stroke="#C9952A" stroke-width="0.6" fill="none" />
+          <polygon points="20,200 110,110 140,200" stroke="#C9952A" stroke-width="0.6" fill="none" />
+          <polygon points="380,200 290,110 260,200" stroke="#C9952A" stroke-width="0.6" fill="none" />
+          <polygon points="20,200 110,290 140,200" stroke="#C9952A" stroke-width="0.6" fill="none" />
+          <polygon points="380,200 290,290 260,200" stroke="#C9952A" stroke-width="0.6" fill="none" />
+          <polygon points="200,380 110,290 200,260" stroke="#C9952A" stroke-width="0.6" fill="none" />
+          <polygon points="200,380 290,290 200,260" stroke="#C9952A" stroke-width="0.6" fill="none" />
+        </svg>
+        <div class="about-center-text">
+          <span class="big">ADS</span>
+          <span class="small" data-en="Since 2022" data-es="Desde 2022">Since 2022</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-content">
+      <p class="section-label" data-en="About Us" data-es="Nosotros">About Us</p>
+      <h2 class="section-title"
+        data-en="WE BUILD<br><span class='accent'>DIGITAL</span><br><span class='gold'>REALITIES</span>"
+        data-es="CONSTRUIMOS<br><span class='accent'>REALIDADES</span><br><span class='gold'>DIGITALES</span>">WE
+        BUILD<br><span class="accent">DIGITAL</span><br><span class="gold">REALITIES</span></h2>
+      <p class="about-desc reveal"
+        data-en="ALMA Development Studios is a results-driven digital agency focused on startups and ambitious mid-size companies. We don't just build websites &mdash; we craft digital ecosystems that convert, perform, and evolve with your business."
+        data-es="ALMA Development Studios es una agencia digital enfocada en resultAños para startups y empresas medianas ambiciosas. No solo construimos sitios web &mdash; creAños ecosistemas digitales que convierten, rendilizan y evolucionan con tu negocio.">
+        ALMA Development Studios is a results-driven digital agency focused on startups and ambitious mid-size
+        companies. We don't just build websites &mdash; we craft digital ecosystems that convert, perform, and evolve with
+        your business.
+      </p>
+      <div class="about-highlights">
+        <div class="about-highlight reveal">
+          <span class="highlight-icon">â&mdash;ˆ</span>
+          <div class="highlight-text">
+            <strong data-en="Performance First" data-es="Rendimiento Primero">Performance First</strong>
+            <span data-en="Every project is built for speed, SEO, and measurable results."
+              data-es="Cada proyecto se construye para velocidad, SEO y resultAños medibles.">Every project is built for
+              speed, SEO, and measurable results.</span>
+          </div>
+        </div>
+        <div class="about-highlight reveal">
+          <span class="highlight-icon">â&mdash;‰</span>
+          <div class="highlight-text">
+            <strong data-en="Scalable Architecture" data-es="Arquitectura Escalable">Scalable Architecture</strong>
+            <span data-en="Built to grow with you &mdash; from MVP to enterprise-grade software."
+              data-es="Construido para crecer contigo &mdash; desde MVP hasta software de nivel empresarial.">Built to grow
+              with you &mdash; from MVP to enterprise-grade software.</span>
+          </div>
+        </div>
+        <div class="about-highlight reveal">
+          <span class="highlight-icon">â&mdash;Œ</span>
+          <div class="highlight-text">
+            <strong data-en="End-to-End Partnership" data-es="AsociaciÃ³n Integral">End-to-End Partnership</strong>
+            <span data-en="From strategy to launch and beyond &mdash; we're with you every step."
+              data-es="Desde la estrategia hasta el lanzamiento y mÃ¡s &mdash; estAños contigo en cada paso.">From strategy to
+              launch and beyond &mdash; we're with you every step.</span>
+          </div>
+        </div>
+      </div>
+      <a href="#contact" class="btn-primary reveal" data-en="Start a Project &rarr;" data-es="Iniciar un Proyecto &rarr;">Start a
+        Project &rarr;</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="services-header reveal">
+      <div>
+        <p class="section-label" data-en="What We Do" data-es="Lo que Hacemos">What We Do</p>
+        <h2 class="section-title" data-en="OUR<br><span class='accent'>SERVICES</span>"
+          data-es="NUESTROS<br><span class='accent'>SERVICIOS</span>">OUR<br><span class="accent">SERVICES</span></h2>
+      </div>
+      <p style="max-width:300px;color:var(--white-dim);font-size:0.85rem;line-height:1.7;"
+        data-en="Full-spectrum digital solutions tailored for growth-stage companies."
+        data-es="Soluciones digitales de espectro completo para empresas en etapa de crecimiento.">
+        Full-spectrum digital solutions tailored for growth-stage companies.
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <span class="service-icon">â¬¡</span>
+        <div class="service-name" data-en="Web Design & UX" data-es="Diseño Web & UX">Web Design & UX</div>
+        <p class="service-desc"
+          data-en="Pixel-perfect interfaces crafted for conversion and user delight. From wireframes to high-fidelity prototypes."
+          data-es="Interfaces perfectas al pixel, diseñadas para conversiÃ³n y satisfacciÃ³n del usuario. Desde wireframes hasta prototipos de alta fidelidad.">
+          Pixel-perfect interfaces crafted for conversion and user delight. From wireframes to high-fidelity prototypes.
+        </p>
+        <div class="service-tags">
+          <span class="tag">Figma</span><span class="tag">UX Research</span><span class="tag">Prototyping</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">02</div>
+        <span class="service-icon">â¬¢</span>
+        <div class="service-name" data-en="Web Development" data-es="Desarrollo Web">Web Development</div>
+        <p class="service-desc"
+          data-en="Modern, performant websites and web apps. Built with cutting-edge tech stacks that scale with your ambitions."
+          data-es="Sitios web modernos y de alto rendimiento. Construidos con tecnologÃ­as modernas que escalan con tus ambiciones.">
+          Modern, performant websites and web apps. Built with cutting-edge tech stacks that scale with your ambitions.
+        </p>
+        <div class="service-tags">
+          <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Node.js</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">03</div>
+        <span class="service-icon">â&mdash;Ž</span>
+        <div class="service-name" data-en="Content Management" data-es="Gestión de Contenido">Content Management</div>
+        <p class="service-desc"
+          data-en="Comprehensive content strategies and management to keep your platforms engaging and up-to-date."
+          data-es="Estrategias y gestiÃ³n integral de contenido para mantener tus plataformas atractivas y actualizadas.">
+          Comprehensive content strategies and management to keep your platforms engaging and up-to-date.</p>
+        <div class="service-tags">
+          <span class="tag">Strategy</span><span class="tag">Copywriting</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <span class="service-icon">â–£</span>
+        <div class="service-name" data-en="Process Automation" data-es="Automatización de Procesos">Process Automation
+        </div>
+        <p class="service-desc"
+          data-en="Streamline your workflows and eliminate manual tasks with custom automation solutions that save time and reduce errors."
+          data-es="Optimiza tus flujos de trabajo y elimina tareas manuales con soluciones de automatizaciÃ³n a medida que ahorran tiempo y reducen errores.">
+          Streamline your workflows and eliminate manual tasks with custom automation solutions that save time and
+          reduce errors.</p>
+        <div class="service-tags">
+          <span class="tag">n8n</span><span class="tag">Make</span><span class="tag">Custom APIs</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">05</div>
+        <span class="service-icon">â&mdash;ˆ</span>
+        <div class="service-name" data-en="SEO & Performance" data-es="SEO & Rendimiento">SEO & Performance</div>
+        <p class="service-desc"
+          data-en="Technical SEO, Core Web Vitals optimization, and performance audits that move your site up the rankings."
+          data-es="SEO tÃ©cnico, optimizaciÃ³n de Core Web Vitals y auditorÃ­as de rendimiento que suben tu sitio en los rankings.">
+          Technical SEO, Core Web Vitals optimization, and performance audits that move your site up the rankings.</p>
+        <div class="service-tags">
+          <span class="tag">Technical SEO</span><span class="tag">Analytics</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">06</div>
+        <span class="service-icon">â&mdash;‰</span>
+        <div class="service-name" data-en="Ongoing Support" data-es="Soporte Continuo">Ongoing Support</div>
+        <p class="service-desc"
+          data-en="Monthly retainers for continuous iteration, updates, and growth hacking. Your dedicated technical partner."
+          data-es="Retainers mensuales para iteraciÃ³n continua, actualizaciones y growth hacking. Tu socio tÃ©cnico dedicado.">
+          Monthly retainers for continuous iteration, updates, and growth hacking. Your dedicated technical partner.</p>
+        <div class="service-tags">
+          <span class="tag">Maintenance</span><span class="tag">Growth</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="process-header reveal">
+      <p class="section-label" data-en="How We Work" data-es="CÃ³mo TrabajAños">How We Work</p>
+      <h2 class="section-title" data-en="OUR<br><span class='gold'>PROCESS</span>"
+        data-es="NUESTRO<br><span class='gold'>PROCESO</span>">OUR<br><span class="gold">PROCESS</span></h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-dot"></div>
+        <span class="step-num">01 /</span>
+        <div class="step-title" data-en="Discovery" data-es="Descubrimiento">Discovery</div>
+        <p class="step-desc"
+          data-en="We deep-dive into your business, goals, and target audience to build a crystal-clear strategy."
+          data-es="Nos sumergimos en tu negocio, objetivos y audiencia para construir una estrategia clara.">We
+          deep-dive into your business, goals, and target audience to build a crystal-clear strategy.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-dot"></div>
+        <span class="step-num">02 /</span>
+        <div class="step-title" data-en="Design" data-es="Diseño">Design</div>
+        <p class="step-desc"
+          data-en="Wireframes, prototypes, and visual systems crafted with precision and aligned to your brand."
+          data-es="Wireframes, prototipos y sistemas visuales creAños con precisiÃ³n y alineAños a tu marca.">Wireframes,
+          prototypes, and visual systems crafted with precision and aligned to your brand.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-dot"></div>
+        <span class="step-num">03 /</span>
+        <div class="step-title" data-en="Development" data-es="Desarrollo">Development</div>
+        <p class="step-desc"
+          data-en="Clean, scalable code. Agile sprints with full transparency and regular check-ins throughout."
+          data-es="CÃ³digo limpio y escalable. Sprints Ã¡giles con total transparencia y revisiones regulares.">Clean,
+          scalable code. Agile sprints with full transparency and regular check-ins throughout.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-dot"></div>
+        <span class="step-num">04 /</span>
+        <div class="step-title" data-en="Launch & Grow" data-es="Lanzamiento & Crecimiento">Launch & Grow</div>
+        <p class="step-desc"
+          data-en="We deploy, monitor, and optimize. Your launch is a beginning, not an end &mdash; we stay to iterate."
+          data-es="DesplegAños, monitoreAños y optimizAños. Tu lanzamiento es un comienzo, no un fin &mdash; nos quedAños para iterar.">
+          We deploy, monitor, and optimize. Your launch is a beginning, not an end &mdash; we stay to iterate.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="portfolio-header reveal">
+      <div>
+        <p class="section-label" data-en="Our Work" data-es="Nuestro Trabajo">Our Work</p>
+        <h2 class="section-title" data-en="SELECTED<br><span class='accent'>PROJECTS</span>"
+          data-es="PROYECTOS<br><span class='accent'>SELECCIONADOS</span>">SELECTED<br><span
+            class="accent">PROJECTS</span></h2>
+      </div>
+      <a href="#contact" class="btn-secondary" data-en="Start Your Project &rarr;" data-es="Inicia tu Proyecto &rarr;">Start Your Project &rarr;</a>
+    </div>
+
+    <!-- Featured project -->
+    <div class="featured-project reveal">
+      <div class="feat-img">
+        <a href="https://almaggidev.github.io/Cardiomed-site/" target="_blank" class="feat-img-inner">
+          <img src="img/Cardiomed-web.png" alt="Featured Project" class="project-img">
+          <!-- <span class="project-placeholder">01</span> -->
+        </a>
+      </div>
+      <div class="feat-meta">
+        <div>
+          <div class="project-category" data-en="Featured / Web Development" data-es="Destacado / Desarrollo Web">
+            Featured / Web Development</div>
+          <div class="project-title" data-en="Cardiomed WEBSITE &mdash; COMING SOON"
+            data-es="Sitio Web Cardiomed &mdash; Próximamente">Cardiomed WEBSITE &mdash; COMING SOON</div>
+            <p class="project-desc"
+              data-en="A modern, responsive platform tailored for a cardiology clinic, featuring online appointment scheduling, a patient portal, and a streamlined user experience."
+              data-es="Una plataforma moderna y responsiva diseñada para una clínica de cardiología, con programación de citas online, portal para el paciente y una experiencia de usuario optimizada.">
+              A modern, responsive platform tailored for a cardiology clinic, featuring online appointment scheduling, a patient portal, and a streamlined user experience.</p>
+          </div>
+          <div>
+            <div class="project-tags-row">
+              <span class="feat-badge">React</span>
+              <span class="feat-badge">Node.js</span>
+              <span class="feat-badge">Stripe</span>
+            </div>
+            <a href="https://almaggidev.github.io/Cardiomed-site/" target="_blank" class="project-link" data-en="View Case Study &rarr;" data-es="Ver Caso de Estudio &rarr;">View Case Study &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects grid -->
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-card-img">
+            <div class="project-card-img-inner">
+              <!-- <img src="path/to/ecommerce-img.jpg" alt="E-Commerce Project" class="project-img"> -->
+              <span class="project-card-num">02</span>
+            </div>
+            <div class="project-card-overlay">
+              <span class="overlay-text" data-en="Coming Soon" data-es="Próximamente">Coming Soon</span>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <div>
+              <div class="project-card-title" data-en="E-Commerce Project" data-es="Proyecto de E-Commerce">E-Commerce Project</div>
+              <div class="project-card-cat" data-en="Web App / E-Commerce" data-es="App Web / E-Commerce">Web App / E-Commerce</div>
+            </div>
+            <span class="project-arrow">&rarr;</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-card-img">
+            <div class="project-card-img-inner">
+              <!-- <img src="path/to/lab-img.jpg" alt="Laboratory Landing Page" class="project-img"> -->
+              <span class="project-card-num">03</span>
+            </div>
+            <div class="project-card-overlay">
+              <span class="overlay-text" data-en="Coming Soon" data-es="Próximamente">Coming Soon</span>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <div>
+              <div class="project-card-title" data-en="Laboratory Landing Page" data-es="Landing Page de Laboratorio">Laboratory Landing Page</div>
+              <div class="project-card-cat" data-en="Web Design / Health" data-es="Diseño Web / Salud">Web Design / Health</div>
+            </div>
+            <span class="project-arrow">&rarr;</span>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-card-img">
+            <div class="project-card-img-inner">
+              <!-- <img src="path/to/dental-img.jpg" alt="Dental Appointment System" class="project-img"> -->
+              <span class="project-card-num">04</span>
+            </div>
+            <div class="project-card-overlay">
+              <span class="overlay-text" data-en="Coming Soon" data-es="Próximamente">Coming Soon</span>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <div>
+              <div class="project-card-title" data-en="Dental Appointment System" data-es="Gestión de Turnos OdontolÃ³gicos">Dental Appointment System</div>
+              <div class="project-card-cat" data-en="Web App / Development" data-es="App Web / Desarrollo">Web App / Development</div>
+            </div>
+            <span class="project-arrow">&rarr;</span>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="testimonials-header reveal">
+      <p class="section-label" data-en="Client Voices" data-es="Opiniones de Clientes">Client Voices</p>
+      <h2 class="section-title" data-en="WHAT THEY<br><span class='gold'>SAY ABOUT US</span>"
+        data-es="LO QUE DICEN<br><span class='gold'>DE NOSOTROS</span>">WHAT THEY<br><span class="gold">SAY ABOUT
+          US</span></h2>
+    </div>
+    <div class="testimonials-track">
+      <div class="testimonial-card reveal">
+        <p class="testimonial-text"
+          data-en="ALMA transformed our online presence completely. The attention to detail and the speed of delivery was impressive. We saw a 40% increase in conversions within the first month."
+          data-es="ALMA transformÃ³ nuestra presencia online por completo. La atenciÃ³n al detalle y la velocidad de entrega fue impresionante. Vimos un aumento del 40% en conversiones en el primer mes.">
+          ALMA transformed our online presence completely. The attention to detail and the speed of delivery was
+          impressive. We saw a 40% increase in conversions within the first month.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MR</div>
+          <div>
+            <div class="author-name">Marcos R.</div>
+            <div class="author-role" data-en="CEO, Startup Founder" data-es="CEO, Fundador de Startup">CEO, Startup
+              Founder</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <p class="testimonial-text"
+          data-en="Working with ALMA was a game-changer. They understood our brand vision from day one and delivered a website that truly reflects who we are. Highly recommend."
+          data-es="Trabajar con ALMA fue un cambio de juego. Entendieron nuestra visiÃ³n de marca desde el primer dÃ­a y entregaron un sitio web que realmente refleja quiÃ©nes somos. Muy recomendable.">
+          Working with ALMA was a game-changer. They understood our brand vision from day one and delivered a website
+          that truly reflects who we are. Highly recommend.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SL</div>
+          <div>
+            <div class="author-name">Sofia L.</div>
+            <div class="author-role" data-en="Marketing Director" data-es="Directora de Marketing">Marketing Director
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <p class="testimonial-text"
+          data-en="The team's technical expertise is matched only by their design sense. Our new platform handles 10x the traffic with zero issues. Exceptional work, exceptional team."
+          data-es="La experiencia tÃ©cnica del equipo solo es igualada por su sentido del diseÃ±o. Nuestra nueva plataforma maneja 10 veces el trÃ¡fico sin ningÃºn problema. Trabajo excepcional, equipo excepcional.">
+          The team's technical expertise is matched only by their design sense. Our new platform handles 10x the traffic
+          with zero issues. Exceptional work, exceptional team.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AC</div>
+          <div>
+            <div class="author-name">AndrÃ©s C.</div>
+            <div class="author-role" data-en="CTO, Mid-Size Company" data-es="CTO, Empresa Mediana">CTO, Mid-Size
+              Company</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="cta-band-text" data-en="READY TO BUILD<br>SOMETHING GREAT?"
+      data-es="¿Listo PARA<br>CONSTRUIR ALGO GRANDE?">READY TO BUILD<br>SOMETHING GREAT?</div>
+    <div class="cta-band-actions">
+      <a href="#contact" class="btn-cta-white" data-en="Book a Free Call" data-es="Reserva una Llamada Gratis">Book a
+        Free Call</a>
+      <a href="https://wa.me/yourphone" target="_blank" class="btn-cta-border" data-en="WhatsApp Us"
+        data-es="EscrÃ­benos por WhatsApp">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+        WhatsApp Us
+      </a>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-content reveal">
+      <p class="section-label" data-en="Get In Touch" data-es="Contáctanos">Get In Touch</p>
+      <h2 class="section-title" data-en="LET'S<br><span class='accent'>TALK.</span>"
+        data-es="HABLEMOS<span class='accent'>.</span>">LET'S<br><span class="accent">TALK.</span></h2>
+      <p class="contact-desc"
+        data-en="Ready to start your project? Book a free 30-minute discovery call or reach out however is easiest for you."
+        data-es="¿Listo para comenzar tu proyecto? Agenda una llamada de descubrimiento gratuita de 30 minutos o contáctanos de la manera más fácil para ti.">
+        Ready to start your project? Book a free 30-minute discovery call or reach out however is easiest for you.
+      </p>
+      <div class="contact-options">
+        <a href="mailto:hello@almastudios.dev" class="contact-option">
+          <span class="contact-option-icon">&#x2709;</span>
+          <div>
+            <span class="contact-option-label" data-en="Email" data-es="Correo">Email</span>
+            <span class="contact-option-value">hello@almastudios.dev</span>
+          </div>
+        </a>
+        <a href="https://wa.me/yourphone" target="_blank" class="contact-option">
+          <span class="contact-option-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+          </span>
+          <div>
+            <span class="contact-option-label">WhatsApp</span>
+            <span class="contact-option-value" data-en="Chat with us directly"
+              data-es="Chatea con nosotros directamente">Chat with us directly</span>
+          </div>
+        </a>
+        <a href="#" class="contact-option">
+          <span class="contact-option-icon">ðŸ“…</span>
+          <div>
+            <span class="contact-option-label" data-en="Book a Call" data-es="Agenda una Llamada">Book a Call</span>
+            <span class="contact-option-value" data-en="Schedule a free 30-min call"
+              data-es="Agenda una llamada gratis de 30 min">Schedule a free 30-min call</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" data-en="Name" data-es="Nombre">Name</label>
+          <input type="text" class="form-input" placeholder="John Smith" data-placeholder-en="John Smith"
+            data-placeholder-es="Juan García">
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-en="Company" data-es="Empresa">Company</label>
+          <input type="text" class="form-input" placeholder="Acme Inc." data-placeholder-en="Acme Inc."
+            data-placeholder-es="Mi Empresa S.A.">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-en="Email" data-es="Correo Electrónico">Email</label>
+        <input type="email" class="form-input" placeholder="john@company.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-en="Service Needed" data-es="Servicio Requerido">Service Needed</label>
+        <select class="form-select form-input">
+          <option value="" data-en="Select a service..." data-es="Selecciona un servicio...">Select a service...
+          </option>
+          <option data-en="Web Design & UX" data-es="Diseño Web & UX">Web Design & UX</option>
+          <option data-en="Web Development" data-es="Desarrollo Web">Web Development</option>
+          <option data-en="Process Automation" data-es="Automatización de Procesos">Process Automation</option>
+          <option data-en="Content Management" data-es="Gestión de Contenido">Content Management</option>
+          <option data-en="Ongoing Support" data-es="Soporte Continuo">Ongoing Support</option>
+          <option data-en="Full Project" data-es="Proyecto Completo">Full Project</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" data-en="Tell us about your project" data-es="Cuéntanos sobre tu proyecto">Tell us
+          about your project</label>
+        <textarea class="form-textarea" placeholder="Describe your project, goals, timeline and budget..."
+          data-placeholder-en="Describe your project, goals, timeline and budget..."
+          data-placeholder-es="Describe tu proyecto, objetivos, plazo y presupuesto..."></textarea>
+      </div>
+      <button class="form-submit" onclick="handleFormSubmit(this)">
+        <span data-en="Send Message &rarr;" data-es="Enviar Mensaje &nearrow;">Send Message &rarr;</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-copy">© 2025 ALMA Development Studios. All rights reserved.</div>
+      <ul class="footer-links">
+        <li><a href="#about" data-en="About" data-es="Nosotros">About</a></li>
+        <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+        <li><a href="#portfolio" data-en="Portfolio">Portfolio</a></li>
+        <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="#" class="social-link">LI</a>
+        <a href="#" class="social-link">IG</a>
+        <a href="#" class="social-link">BE</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
