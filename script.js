@@ -1,4 +1,4 @@
-﻿// Cursor
+// Cursor
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
     let mx = 0, my = 0, rx = 0, ry = 0;
@@ -42,20 +42,113 @@
       });
     }
 
-    // Form
-    function handleFormSubmit(btn) {
-      const originalText = btn.querySelector('span').textContent;
-      btn.querySelector('span').textContent = isEN ? 'Sending...' : 'Enviando...';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.querySelector('span').textContent = isEN ? 'Message Sent âœ“' : 'Mensaje Enviado ✓'
-        btn.style.background = '#1a6e3c';
-        setTimeout(() => {
-          btn.querySelector('span').textContent = originalText;
-          btn.style.background = '';
-          btn.disabled = false;
-        }, 3000);
-      }, 1500);
+    // Toast Function
+    function showToast(title, msg, type = 'success') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      
+      const icon = type === 'success' ? '✓' : '✕';
+      
+      toast.innerHTML = `
+        <span class="toast-icon">${icon}</span>
+        <div class="toast-content">
+          <span class="toast-title">${title}</span>
+          <span class="toast-msg">${msg}</span>
+        </div>
+        <button class="toast-close">✕</button>
+      `;
+      
+      container.appendChild(toast);
+      
+      // Show
+      setTimeout(() => toast.classList.add('show'), 100);
+      
+      // Auto hide
+      const timer = setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 400);
+      }, 5000);
+      
+      // Close button
+      toast.querySelector('.toast-close').addEventListener('click', () => {
+        clearTimeout(timer);
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 400);
+      });
+    }
+
+    // Contact Form Handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Custom Manual Validation
+        if (!this.checkValidity()) {
+          const firstInvalid = this.querySelector(':invalid');
+          const labelEl = firstInvalid.parentElement.querySelector('.form-label');
+          const label = labelEl ? labelEl.textContent : (isEN ? 'Field' : 'Campo');
+          
+          showToast(
+            isEN ? 'Validation' : 'Validación',
+            isEN ? `Please complete the field: ${label}` : `Por favor completa el campo: ${label}`,
+            'error'
+          );
+          
+          // Visual feedback on the input
+          firstInvalid.style.borderColor = 'var(--orange)';
+          setTimeout(() => { firstInvalid.style.borderColor = ''; }, 3000);
+          
+          firstInvalid.focus();
+          return;
+        }
+        
+        const btn = this.querySelector('.form-submit');
+        const btnSpan = btn.querySelector('span');
+        const originalText = btnSpan.innerHTML;
+        
+        btn.disabled = true;
+        btnSpan.innerHTML = isEN ? 'Sending...' : 'Enviando...';
+        
+        // EmailJS Integration
+        const serviceID = 'service_unn9g4w';
+        const templateID = 'template_zdhossq';
+
+        emailjs.sendForm(serviceID, templateID, this)
+          .then(() => {
+            showToast(
+              isEN ? 'Success' : 'Éxito',
+              isEN ? 'Message sent successfully!' : '¡Mensaje enviado con éxito!',
+              'success'
+            );
+            this.reset();
+          })
+          .catch((err) => {
+            // Log error for debugging
+            console.warn('EmailJS not configured or error:', err);
+            
+            // Fallback for demo purposes if keys are not set
+            if (serviceID === 'YOUR_SERVICE_ID' || err.status === 400) {
+               showToast(
+                isEN ? 'Success (Demo Mode)' : 'Éxito (Modo Demo)',
+                isEN ? 'In a real setup, your message would be sent now.' : 'En un entorno real, tu mensaje se enviaría ahora.',
+                'success'
+              );
+              this.reset();
+            } else {
+              showToast(
+                isEN ? 'Error' : 'Error',
+                isEN ? 'Something went wrong. Please try again.' : 'Algo salió mal. Por favor intente de nuevo.',
+                'error'
+              );
+            }
+          })
+          .finally(() => {
+            btn.disabled = false;
+            btnSpan.innerHTML = originalText;
+          });
+      });
     }
 
     // Smooth hover sound effect (subtle visual pulse on nav items)

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,6 +11,15 @@
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="img/favicon.png">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // Initialize with a placeholder or the user's key if they provide it later
+      emailjs.init({
+        publicKey: "6hnELTrzyiMSTbI4C",
+      });
+    })();
+  </script>
 </head>
 
 <body>
@@ -21,7 +30,7 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="menuClose">âœ•</button>
+    <button class="mobile-close" id="menuClose">✕</button>
     <a href="#about" onclick="closeMobileMenu()">About</a>
     <a href="#services" onclick="closeMobileMenu()">Services</a>
     <a href="#process" onclick="closeMobileMenu()">Process</a>
@@ -163,18 +172,18 @@
   <div class="stats-bar reveal">
     <div class="stat-item">
       <span class="stat-num" data-count="20">0<span>+</span></span>
-      <span class="stat-label" data-en="Projects Delivered" data-es="Proyectos EntregAños">Projects Delivered</span>
+      <span class="stat-label" data-en="Projects Delivered" data-es="Proyectos Entregados">Projects Delivered</span>
     </div>
     <div class="stat-divider"></div>
     <div class="stat-item">
       <span class="stat-num" data-count="100"><span>100%</span></span>
-      <span class="stat-label" data-en="Client Satisfaction" data-es="SatisfacciÃ³n del Cliente">Client
+      <span class="stat-label" data-en="Client Satisfaction" data-es="Satisfacción del Cliente">Client
         Satisfaction</span>
     </div>
     <div class="stat-divider"></div>
     <div class="stat-item">
       <span class="stat-num" data-count="3">0<span>+</span></span>
-      <span class="stat-label" data-en="Years of Experience" data-es="AÃ±os de Experiencia">Years of Experience</span>
+      <span class="stat-label" data-en="Years of Experience" data-es="Años de Experiencia">Years of Experience</span>
     </div>
     <div class="stat-divider"></div>
     <div class="stat-item">
@@ -221,14 +230,14 @@
         BUILD<br><span class="accent">DIGITAL</span><br><span class="gold">REALITIES</span></h2>
       <p class="about-desc reveal"
         data-en="ALMA Development Studios is a results-driven digital agency focused on startups and ambitious mid-size companies. We don't just build websites &mdash; we craft digital ecosystems that convert, perform, and evolve with your business."
-        data-es="ALMA Development Studios es una agencia digital enfocada en resultAños para startups y empresas medianas ambiciosas. No solo construimos sitios web &mdash; creAños ecosistemas digitales que convierten, rendilizan y evolucionan con tu negocio.">
+        data-es="ALMA Development Studios es una agencia digital enfocada en resultados para startups y empresas medianas ambiciosas. No solo construimos sitios web &mdash; creamos ecosistemas digitales que convierten, rendilizan y evolucionan con tu negocio.">
         ALMA Development Studios is a results-driven digital agency focused on startups and ambitious mid-size
         companies. We don't just build websites &mdash; we craft digital ecosystems that convert, perform, and evolve with
         your business.
       </p>
       <div class="about-highlights">
         <div class="about-highlight reveal">
-          <span class="highlight-icon">â&mdash;ˆ</span>
+          <span class="highlight-icon">✦</span>
           <div class="highlight-text">
             <strong data-en="Performance First" data-es="Rendimiento Primero">Performance First</strong>
             <span data-en="Every project is built for speed, SEO, and measurable results."
@@ -237,7 +246,7 @@
           </div>
         </div>
         <div class="about-highlight reveal">
-          <span class="highlight-icon">â&mdash;‰</span>
+          <span class="highlight-icon">✧</span>
           <div class="highlight-text">
             <strong data-en="Scalable Architecture" data-es="Arquitectura Escalable">Scalable Architecture</strong>
             <span data-en="Built to grow with you &mdash; from MVP to enterprise-grade software."
@@ -246,11 +255,11 @@
           </div>
         </div>
         <div class="about-highlight reveal">
-          <span class="highlight-icon">â&mdash;Œ</span>
+          <span class="highlight-icon">◈</span>
           <div class="highlight-text">
-            <strong data-en="End-to-End Partnership" data-es="AsociaciÃ³n Integral">End-to-End Partnership</strong>
+            <strong data-en="End-to-End Partnership" data-es="Asociación Integral">End-to-End Partnership</strong>
             <span data-en="From strategy to launch and beyond &mdash; we're with you every step."
-              data-es="Desde la estrategia hasta el lanzamiento y mÃ¡s &mdash; estAños contigo en cada paso.">From strategy to
+              data-es="Desde la estrategia hasta el lanzamiento y más &mdash; estamos contigo en cada paso.">From strategy to
               launch and beyond &mdash; we're with you every step.</span>
           </div>
         </div>
@@ -277,11 +286,11 @@
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-num">01</div>
-        <span class="service-icon">â¬¡</span>
+        <span class="service-icon">↑</span>
         <div class="service-name" data-en="Web Design & UX" data-es="Diseño Web & UX">Web Design & UX</div>
         <p class="service-desc"
           data-en="Pixel-perfect interfaces crafted for conversion and user delight. From wireframes to high-fidelity prototypes."
-          data-es="Interfaces perfectas al pixel, diseñadas para conversiÃ³n y satisfacciÃ³n del usuario. Desde wireframes hasta prototipos de alta fidelidad.">
+          data-es="Interfaces perfectas al pixel, diseñadas para conversión y satisfacción del usuario. Desde wireframes hasta prototipos de alta fidelidad.">
           Pixel-perfect interfaces crafted for conversion and user delight. From wireframes to high-fidelity prototypes.
         </p>
         <div class="service-tags">
@@ -290,11 +299,11 @@
       </div>
       <div class="service-card reveal">
         <div class="service-num">02</div>
-        <span class="service-icon">â¬¢</span>
+        <span class="service-icon">↓</span>
         <div class="service-name" data-en="Web Development" data-es="Desarrollo Web">Web Development</div>
         <p class="service-desc"
           data-en="Modern, performant websites and web apps. Built with cutting-edge tech stacks that scale with your ambitions."
-          data-es="Sitios web modernos y de alto rendimiento. Construidos con tecnologÃ­as modernas que escalan con tus ambiciones.">
+          data-es="Sitios web modernos y de alto rendimiento. Construidos con tecnologías modernas que escalan con tus ambiciones.">
           Modern, performant websites and web apps. Built with cutting-edge tech stacks that scale with your ambitions.
         </p>
         <div class="service-tags">
@@ -303,11 +312,11 @@
       </div>
       <div class="service-card reveal">
         <div class="service-num">03</div>
-        <span class="service-icon">â&mdash;Ž</span>
+        <span class="service-icon">○</span>
         <div class="service-name" data-en="Content Management" data-es="Gestión de Contenido">Content Management</div>
         <p class="service-desc"
           data-en="Comprehensive content strategies and management to keep your platforms engaging and up-to-date."
-          data-es="Estrategias y gestiÃ³n integral de contenido para mantener tus plataformas atractivas y actualizadas.">
+          data-es="Estrategias y gestión integral de contenido para mantener tus plataformas atractivas y actualizadas.">
           Comprehensive content strategies and management to keep your platforms engaging and up-to-date.</p>
         <div class="service-tags">
           <span class="tag">Strategy</span><span class="tag">Copywriting</span>
@@ -315,12 +324,12 @@
       </div>
       <div class="service-card reveal">
         <div class="service-num">04</div>
-        <span class="service-icon">â–£</span>
+        <span class="service-icon">▪</span>
         <div class="service-name" data-en="Process Automation" data-es="Automatización de Procesos">Process Automation
         </div>
         <p class="service-desc"
           data-en="Streamline your workflows and eliminate manual tasks with custom automation solutions that save time and reduce errors."
-          data-es="Optimiza tus flujos de trabajo y elimina tareas manuales con soluciones de automatizaciÃ³n a medida que ahorran tiempo y reducen errores.">
+          data-es="Optimiza tus flujos de trabajo y elimina tareas manuales con soluciones de automatización a medida que ahorran tiempo y reducen errores.">
           Streamline your workflows and eliminate manual tasks with custom automation solutions that save time and
           reduce errors.</p>
         <div class="service-tags">
@@ -329,11 +338,11 @@
       </div>
       <div class="service-card reveal">
         <div class="service-num">05</div>
-        <span class="service-icon">â&mdash;ˆ</span>
+        <span class="service-icon">✦</span>
         <div class="service-name" data-en="SEO & Performance" data-es="SEO & Rendimiento">SEO & Performance</div>
         <p class="service-desc"
           data-en="Technical SEO, Core Web Vitals optimization, and performance audits that move your site up the rankings."
-          data-es="SEO tÃ©cnico, optimizaciÃ³n de Core Web Vitals y auditorÃ­as de rendimiento que suben tu sitio en los rankings.">
+          data-es="SEO técnico, optimización de Core Web Vitals y auditorías de rendimiento que suben tu sitio en los rankings.">
           Technical SEO, Core Web Vitals optimization, and performance audits that move your site up the rankings.</p>
         <div class="service-tags">
           <span class="tag">Technical SEO</span><span class="tag">Analytics</span>
@@ -341,11 +350,11 @@
       </div>
       <div class="service-card reveal">
         <div class="service-num">06</div>
-        <span class="service-icon">â&mdash;‰</span>
+        <span class="service-icon">✧</span>
         <div class="service-name" data-en="Ongoing Support" data-es="Soporte Continuo">Ongoing Support</div>
         <p class="service-desc"
           data-en="Monthly retainers for continuous iteration, updates, and growth hacking. Your dedicated technical partner."
-          data-es="Retainers mensuales para iteraciÃ³n continua, actualizaciones y growth hacking. Tu socio tÃ©cnico dedicado.">
+          data-es="Retainers mensuales para iteración continua, actualizaciones y growth hacking. Tu socio técnico dedicado.">
           Monthly retainers for continuous iteration, updates, and growth hacking. Your dedicated technical partner.</p>
         <div class="service-tags">
           <span class="tag">Maintenance</span><span class="tag">Growth</span>
@@ -357,7 +366,7 @@
   <!-- PROCESS -->
   <section id="process">
     <div class="process-header reveal">
-      <p class="section-label" data-en="How We Work" data-es="CÃ³mo TrabajAños">How We Work</p>
+      <p class="section-label" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</p>
       <h2 class="section-title" data-en="OUR<br><span class='gold'>PROCESS</span>"
         data-es="NUESTRO<br><span class='gold'>PROCESO</span>">OUR<br><span class="gold">PROCESS</span></h2>
     </div>
@@ -377,7 +386,7 @@
         <div class="step-title" data-en="Design" data-es="Diseño">Design</div>
         <p class="step-desc"
           data-en="Wireframes, prototypes, and visual systems crafted with precision and aligned to your brand."
-          data-es="Wireframes, prototipos y sistemas visuales creAños con precisiÃ³n y alineAños a tu marca.">Wireframes,
+          data-es="Wireframes, prototipos y sistemas visuales creados con precisión y alineados a tu marca.">Wireframes,
           prototypes, and visual systems crafted with precision and aligned to your brand.</p>
       </div>
       <div class="process-step reveal">
@@ -386,7 +395,7 @@
         <div class="step-title" data-en="Development" data-es="Desarrollo">Development</div>
         <p class="step-desc"
           data-en="Clean, scalable code. Agile sprints with full transparency and regular check-ins throughout."
-          data-es="CÃ³digo limpio y escalable. Sprints Ã¡giles con total transparencia y revisiones regulares.">Clean,
+          data-es="Código limpio y escalable. Sprints ágiles con total transparencia y revisiones regulares.">Clean,
           scalable code. Agile sprints with full transparency and regular check-ins throughout.</p>
       </div>
       <div class="process-step reveal">
@@ -395,7 +404,7 @@
         <div class="step-title" data-en="Launch & Grow" data-es="Lanzamiento & Crecimiento">Launch & Grow</div>
         <p class="step-desc"
           data-en="We deploy, monitor, and optimize. Your launch is a beginning, not an end &mdash; we stay to iterate."
-          data-es="DesplegAños, monitoreAños y optimizAños. Tu lanzamiento es un comienzo, no un fin &mdash; nos quedAños para iterar.">
+          data-es="Desplegamos, monitoreamos y optimizamos. Tu lanzamiento es un comienzo, no un fin &mdash; nos quedamos para iterar.">
           We deploy, monitor, and optimize. Your launch is a beginning, not an end &mdash; we stay to iterate.</p>
       </div>
     </div>
@@ -493,7 +502,7 @@
           </div>
           <div class="project-card-body">
             <div>
-              <div class="project-card-title" data-en="Dental Appointment System" data-es="Gestión de Turnos OdontolÃ³gicos">Dental Appointment System</div>
+              <div class="project-card-title" data-en="Dental Appointment System" data-es="Gestión de Turnos Odontológicos">Dental Appointment System</div>
               <div class="project-card-cat" data-en="Web App / Development" data-es="App Web / Desarrollo">Web App / Development</div>
             </div>
             <span class="project-arrow">&rarr;</span>
@@ -514,13 +523,13 @@
       <div class="testimonial-card reveal">
         <p class="testimonial-text"
           data-en="ALMA transformed our online presence completely. The attention to detail and the speed of delivery was impressive. We saw a 40% increase in conversions within the first month."
-          data-es="ALMA transformÃ³ nuestra presencia online por completo. La atenciÃ³n al detalle y la velocidad de entrega fue impresionante. Vimos un aumento del 40% en conversiones en el primer mes.">
+          data-es="ALMA transformó nuestra presencia online por completo. La atención al detalle y la velocidad de entrega fue impresionante. Vimos un aumento del 40% en conversiones en el primer mes.">
           ALMA transformed our online presence completely. The attention to detail and the speed of delivery was
           impressive. We saw a 40% increase in conversions within the first month.</p>
         <div class="testimonial-author">
-          <div class="author-avatar">MR</div>
+          <div class="author-avatar">TF</div>
           <div>
-            <div class="author-name">Marcos R.</div>
+            <div class="author-name">Theo F.</div>
             <div class="author-role" data-en="CEO, Startup Founder" data-es="CEO, Fundador de Startup">CEO, Startup
               Founder</div>
           </div>
@@ -529,7 +538,7 @@
       <div class="testimonial-card reveal">
         <p class="testimonial-text"
           data-en="Working with ALMA was a game-changer. They understood our brand vision from day one and delivered a website that truly reflects who we are. Highly recommend."
-          data-es="Trabajar con ALMA fue un cambio de juego. Entendieron nuestra visiÃ³n de marca desde el primer dÃ­a y entregaron un sitio web que realmente refleja quiÃ©nes somos. Muy recomendable.">
+          data-es="Trabajar con ALMA fue un cambio de juego. Entendieron nuestra visión de marca desde el primer día y entregaron un sitio web que realmente refleja quiénes somos. Muy recomendable.">
           Working with ALMA was a game-changer. They understood our brand vision from day one and delivered a website
           that truly reflects who we are. Highly recommend.</p>
         <div class="testimonial-author">
@@ -544,13 +553,13 @@
       <div class="testimonial-card reveal">
         <p class="testimonial-text"
           data-en="The team's technical expertise is matched only by their design sense. Our new platform handles 10x the traffic with zero issues. Exceptional work, exceptional team."
-          data-es="La experiencia tÃ©cnica del equipo solo es igualada por su sentido del diseÃ±o. Nuestra nueva plataforma maneja 10 veces el trÃ¡fico sin ningÃºn problema. Trabajo excepcional, equipo excepcional.">
+          data-es="La experiencia técnica del equipo solo es igualada por su sentido del diseño. Nuestra nueva plataforma maneja 10 veces el tráfico sin ningún problema. Trabajo excepcional, equipo excepcional.">
           The team's technical expertise is matched only by their design sense. Our new platform handles 10x the traffic
           with zero issues. Exceptional work, exceptional team.</p>
         <div class="testimonial-author">
           <div class="author-avatar">AC</div>
           <div>
-            <div class="author-name">AndrÃ©s C.</div>
+            <div class="author-name">Andrés C.</div>
             <div class="author-role" data-en="CTO, Mid-Size Company" data-es="CTO, Empresa Mediana">CTO, Mid-Size
               Company</div>
           </div>
@@ -567,7 +576,7 @@
       <a href="#contact" class="btn-cta-white" data-en="Book a Free Call" data-es="Reserva una Llamada Gratis">Book a
         Free Call</a>
       <a href="https://wa.me/yourphone" target="_blank" class="btn-cta-border" data-en="WhatsApp Us"
-        data-es="EscrÃ­benos por WhatsApp">
+        data-es="Escríbenos por WhatsApp">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
           <path
             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
@@ -589,14 +598,14 @@
         Ready to start your project? Book a free 30-minute discovery call or reach out however is easiest for you.
       </p>
       <div class="contact-options">
-        <a href="mailto:hello@almastudios.dev" class="contact-option">
+        <a href="mailto:alma.devstudios@gmail.com" class="contact-option">
           <span class="contact-option-icon">&#x2709;</span>
           <div>
             <span class="contact-option-label" data-en="Email" data-es="Correo">Email</span>
-            <span class="contact-option-value">hello@almastudios.dev</span>
+            <span class="contact-option-value">alma.devstudios@gmail.com</span>
           </div>
         </a>
-        <a href="https://wa.me/yourphone" target="_blank" class="contact-option">
+        <a href="https://wa.me/+5493489344160" target="_blank" class="contact-option">
           <span class="contact-option-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366">
               <path
@@ -610,7 +619,7 @@
           </div>
         </a>
         <a href="#" class="contact-option">
-          <span class="contact-option-icon">ðŸ“…</span>
+          <span class="contact-option-icon">📅</span>
           <div>
             <span class="contact-option-label" data-en="Book a Call" data-es="Agenda una Llamada">Book a Call</span>
             <span class="contact-option-value" data-en="Schedule a free 30-min call"
@@ -619,53 +628,53 @@
         </a>
       </div>
     </div>
-    <div class="contact-form reveal">
+    <form class="contact-form reveal" id="contactForm" novalidate>
       <div class="form-row">
         <div class="form-group">
           <label class="form-label" data-en="Name" data-es="Nombre">Name</label>
-          <input type="text" class="form-input" placeholder="John Smith" data-placeholder-en="John Smith"
-            data-placeholder-es="Juan García">
+          <input type="text" name="user_name" class="form-input" placeholder="John Smith" data-placeholder-en="John Smith"
+            data-placeholder-es="Juan García" required>
         </div>
         <div class="form-group">
           <label class="form-label" data-en="Company" data-es="Empresa">Company</label>
-          <input type="text" class="form-input" placeholder="Acme Inc." data-placeholder-en="Acme Inc."
+          <input type="text" name="user_company" class="form-input" placeholder="Acme Inc." data-placeholder-en="Acme Inc."
             data-placeholder-es="Mi Empresa S.A.">
         </div>
       </div>
       <div class="form-group">
         <label class="form-label" data-en="Email" data-es="Correo Electrónico">Email</label>
-        <input type="email" class="form-input" placeholder="john@company.com">
+        <input type="email" name="user_email" class="form-input" placeholder="john@company.com" required>
       </div>
       <div class="form-group">
         <label class="form-label" data-en="Service Needed" data-es="Servicio Requerido">Service Needed</label>
-        <select class="form-select form-input">
+        <select name="service" class="form-select form-input" required>
           <option value="" data-en="Select a service..." data-es="Selecciona un servicio...">Select a service...
           </option>
-          <option data-en="Web Design & UX" data-es="Diseño Web & UX">Web Design & UX</option>
-          <option data-en="Web Development" data-es="Desarrollo Web">Web Development</option>
-          <option data-en="Process Automation" data-es="Automatización de Procesos">Process Automation</option>
-          <option data-en="Content Management" data-es="Gestión de Contenido">Content Management</option>
-          <option data-en="Ongoing Support" data-es="Soporte Continuo">Ongoing Support</option>
-          <option data-en="Full Project" data-es="Proyecto Completo">Full Project</option>
+          <option value="Web Design" data-en="Web Design & UX" data-es="Diseño Web & UX">Web Design & UX</option>
+          <option value="Web Development" data-en="Web Development" data-es="Desarrollo Web">Web Development</option>
+          <option value="Process Automation" data-en="Process Automation" data-es="Automatización de Procesos">Process Automation</option>
+          <option value="Content Management" data-en="Content Management" data-es="Gestión de Contenido">Content Management</option>
+          <option value="Ongoing Support" data-en="Ongoing Support" data-es="Soporte Continuo">Ongoing Support</option>
+          <option value="Full Project" data-en="Full Project" data-es="Proyecto Completo">Full Project</option>
         </select>
       </div>
       <div class="form-group">
         <label class="form-label" data-en="Tell us about your project" data-es="Cuéntanos sobre tu proyecto">Tell us
           about your project</label>
-        <textarea class="form-textarea" placeholder="Describe your project, goals, timeline and budget..."
+        <textarea name="message" class="form-textarea" placeholder="Describe your project, goals, timeline and budget..."
           data-placeholder-en="Describe your project, goals, timeline and budget..."
-          data-placeholder-es="Describe tu proyecto, objetivos, plazo y presupuesto..."></textarea>
+          data-placeholder-es="Describe tu proyecto, objetivos, plazo y presupuesto..." required></textarea>
       </div>
-      <button class="form-submit" onclick="handleFormSubmit(this)">
+      <button type="submit" class="form-submit">
         <span data-en="Send Message &rarr;" data-es="Enviar Mensaje &nearrow;">Send Message &rarr;</span>
       </button>
-    </div>
+    </form>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-copy">© 2025 ALMA Development Studios. All rights reserved.</div>
+      <div class="footer-copy">© 2026 ALMA Development Studios. All rights reserved.</div>
       <ul class="footer-links">
         <li><a href="#about" data-en="About" data-es="Nosotros">About</a></li>
         <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
@@ -679,6 +688,8 @@
       </div>
     </div>
   </footer>
+
+  <div id="toastContainer" class="toast-container"></div>
 
   <script src="script.js"></script>
 </body>
